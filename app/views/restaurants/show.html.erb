@@ -1,0 +1,12 @@
+<%= @restaurant.name%>
+<%= @restaurant.category%>
+<%= @restaurant.address%>
+<%= @restaurant.phone_number%>
+<% if @reviews.empty? %>
+  <p>Aucun avis pour le moment</p>
+<% else %>
+  <% @reviews.each do |review| %>
+      <%= review.content %>
+  <% end %>
+<% end %>
+<%= link_to "Add a review", "/restaurants/#{@restaurant.id}/reviews/new" %>
